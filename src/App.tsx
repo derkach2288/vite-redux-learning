@@ -1,5 +1,9 @@
+import GlobalStyles from "./styles/GlobalStyles"
+
 function App() {
-  return <div>Redux project</div>
+  return <div>
+    <GlobalStyles />
+    Redux project</div>
 }
 
 export default App
