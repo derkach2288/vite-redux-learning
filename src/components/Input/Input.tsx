@@ -22,7 +22,7 @@ function Input({
 
   return (
     <InputContainer>
-      {/* <InputLabel htmlFor={inputId}>{labelName}</InputLabel> */}
+      <InputLabel htmlFor={inputId}>{labelName}</InputLabel>
       <InputComponent
         $error={error}
         type={type}
