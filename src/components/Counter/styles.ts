@@ -5,7 +5,7 @@ import {colors} from "styles/colors"
 export const CounterWrapper = styled.div`
   display: flex;
   gap: 15px;
-  width: 300px;
+  width: 500px;
   height: fit-content;
   padding: 40px;
   background: ${colors.primary};
