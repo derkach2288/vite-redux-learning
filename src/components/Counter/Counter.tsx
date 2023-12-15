@@ -8,6 +8,7 @@ function Counter() {
 
   const onPlus = () => {
     setCount((prevValue) => prevValue + 1)
+    // setCount((prevValue) => parseFloat((prevValue + 1).toFixed(2)))
   }
 
   const onMinus = () => {
@@ -19,7 +20,8 @@ function Counter() {
   }
 
   const onDivide = () => {
-    setCount((prevValue) => Math.round((prevValue / 2) * 100) / 100 )
+    // setCount((prevValue) => Math.round((prevValue / 2) * 100) / 100 )
+    setCount((prevValue) => parseFloat((prevValue / 2).toFixed(2)))
   }
 
   return (
