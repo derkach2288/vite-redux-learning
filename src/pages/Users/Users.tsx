@@ -1,7 +1,7 @@
 import {} from "./styles"
 
 function Users () {
-  return <></>
+  return <>Users</>
 }
 
 export default Users;

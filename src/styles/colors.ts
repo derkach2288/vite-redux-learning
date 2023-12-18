@@ -3,6 +3,7 @@ interface Colors {
   button: string;
   white: string;
   black: string;
+  formTitle: string,
 }
 
 export const colors: Colors = {
@@ -10,4 +11,5 @@ export const colors: Colors = {
   button: "#050599",
   white: "#ffffff",
   black: "#000000",
+  formTitle: "rgb(123, 54, 247)",
 };
