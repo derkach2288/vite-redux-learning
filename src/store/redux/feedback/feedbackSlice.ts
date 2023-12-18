@@ -13,7 +13,8 @@ const feedbackSlice = createSlice({
   reducers: {
     addLike: (state) => {state.countLike += 1},
     addDisLike: (state) => {state.countDisLike += 1 },
-    resetResults: (state) => { state.countDisLike = 0, state.countLike = 0}
+    // resetResults: (state) => { state.countDisLike = 0, state.countLike = 0}
+    resetResults: (state) => feedbackInitialState
   },
 })
 
