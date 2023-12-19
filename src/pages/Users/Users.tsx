@@ -1,7 +1,21 @@
-import {} from "./styles"
+import { useSelector } from "react-redux"
+import { usersState } from "store/redux/users/selectors"
 
-function Users () {
-  return <>Users</>
+import { UsersPageWrapper, UserCard, ParagraphStylesBody } from "./styles"
+
+function Users() {
+  const usersSt = useSelector(usersState)
+  return (
+    <UsersPageWrapper>
+      {usersSt.users.map((user) => (
+        <UserCard>
+          <ParagraphStylesBody>{user.firstLastName}</ParagraphStylesBody>
+          <ParagraphStylesBody>{user.age}</ParagraphStylesBody>
+          <ParagraphStylesBody>{user.jobTitle}</ParagraphStylesBody>
+        </UserCard>
+      ))}
+    </UsersPageWrapper>
+  )
 }
 
-export default Users;
+export default Users

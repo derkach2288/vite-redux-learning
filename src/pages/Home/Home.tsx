@@ -10,7 +10,7 @@ import { HomePageWrapper, UserForm, UserFormName } from "./styles"
 import {usersActions} from "store/redux/users/usersSlice"
 
 function Home() {
-  const dispach = useDispatch();
+  const dispatch = useDispatch();
 
   const formik = useFormik({
     initialValues: {
@@ -19,7 +19,7 @@ function Home() {
       jobTitle: "",
     },
     onSubmit: (values) => {
-      dispach(usersActions.addUser(values))
+      dispatch(usersActions.addUser(values))
       console.log(values);
     },
   })
