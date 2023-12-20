@@ -12,6 +12,7 @@ export const ButtonComponent = styled.button<ButtonComponetProps>`
   padding: 4px;
   outline: none;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
   /* background-color: ${(props) => (props.disabled ? "grey" : "blue")}; */
   background-color: ${({ disabled }) => (disabled ? "grey" : "blue")};
