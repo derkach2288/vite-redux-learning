@@ -36,7 +36,7 @@ function CatFacts() {
         {data && (
           <CatFactsContainer>
             {data.map((catFact) => (
-              <Paragraph>{catFact.fact}</Paragraph>
+              <Paragraph key={catFact.id}>{catFact.fact}</Paragraph>
             ))}
           </CatFactsContainer>
         )}

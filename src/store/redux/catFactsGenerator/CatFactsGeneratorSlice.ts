@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit"
+import {v4} from "uuid"
 
-import {CatFactsGeneratorState, CatFactsData} from "./types"
+import {CatFactsGeneratorState, CatFactsData, CatFactsDataPayload} from "./types"
 
 const catFactsGeneratorInitialState: CatFactsGeneratorState = {
   data: [],
@@ -25,10 +26,10 @@ const CatFactsGeneratorSlice = createSlice({
     .addCase(getCatFact.pending, (state: CatFactsGeneratorState) => {
       state.isLoading = true
     })
-    .addCase(getCatFact.fulfilled, (state: CatFactsGeneratorState, {payload}: PayloadAction<CatFactsData>) => {
+    .addCase(getCatFact.fulfilled, (state: CatFactsGeneratorState, {payload}: PayloadAction<CatFactsDataPayload>) => {
       state.isLoading = false
       // state.data ? state.data = [...state.data, payload ] : state.data = [payload]
-      state.data.push(payload)
+      state.data.push({...payload, id: v4()})
     })
     .addCase(getCatFact.rejected, (state: CatFactsGeneratorState, {payload}: PayloadAction<any>) => {
       state.isLoading = false
