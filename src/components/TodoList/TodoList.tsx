@@ -1,6 +1,5 @@
 import { useState, ChangeEvent } from "react"
 import {useDispatch, useSelector} from "react-redux"
-import {v4} from "uuid"
 
 import {todoListActions} from "store/redux/todoList/todoListSlice"
 import {Note} from "store/redux/todoList/types"
@@ -40,7 +39,7 @@ function TodoList() {
           }}/>
          {todoList.length > 0 && <UlContainer>
         {todoList.map((not: Note) => (
-          <LiStyles key={v4()} onClick={() => {dispatch(todoListActions.deleteNote(not.id))}}>{not.note}</LiStyles>
+          <LiStyles key={not.id} onClick={() => {dispatch(todoListActions.deleteNote(not.id))}}>{not.note}</LiStyles>
         ))}
         </UlContainer>}
         { todoList.length > 0 &&<Button name="Очистить список" onClick={() => {dispatch(todoListActions.deleteTodoList())}} />}
