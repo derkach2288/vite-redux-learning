@@ -9,12 +9,14 @@ import TodoList from "components/TodoList"
 import Lesson30 from "lessons/Lesson30"
 import Homework31 from "homeworks/Homework31"
 import JokeGenerator from "components/JokeGenerator"
+import CatFacts from "components/CatFacts"
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <JokeGenerator />
+      <CatFacts />
+      {/* <JokeGenerator /> */}
       {/* <TodoList /> */}
       {/* <Layout>
         <Routes>
