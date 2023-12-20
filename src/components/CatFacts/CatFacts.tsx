@@ -8,6 +8,7 @@ import {
   CatFactsCard,
   CatFactsName,
   CatFactsContainer,
+  FactContainer,
   Paragraph,
   LoadingContainer,
 } from "./styles"
@@ -36,7 +37,10 @@ function CatFacts() {
         {data && (
           <CatFactsContainer>
             {data.map((catFact) => (
-              <Paragraph key={catFact.id}>{catFact.fact}</Paragraph>
+              <FactContainer key={catFact.id}>
+                <Paragraph>{catFact.fact}</Paragraph>
+                <Button name="Delete fact"/>
+              </FactContainer>
             ))}
           </CatFactsContainer>
         )}

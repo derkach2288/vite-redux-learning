@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import {NotesImg} from "assets"
+import { NotesImg } from "assets"
 
 export const CatFactsWrapper = styled.div`
   display: flex;
@@ -19,8 +19,7 @@ export const CatFactsCard = styled.div`
   border: 1px solid black;
   background: url(${NotesImg});
   background-size: 100%;
-
-  `
+`
 
 export const CatFactsName = styled.p`
   display: flex;
@@ -34,9 +33,18 @@ export const CatFactsContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
+  gap: 20px;
+`
+
+export const FactContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
 `
 
 export const Paragraph = styled.p`
+  flex: 0 0 80%;
   font-size: 16px;
   color: #555;
   width: fit-content;
@@ -50,5 +58,5 @@ export const Paragraph = styled.p`
 `
 
 export const LoadingContainer = styled.div`
-height: 18px
+  height: 18px;
 `
