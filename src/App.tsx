@@ -8,12 +8,14 @@ import TodoList from "components/TodoList"
 // import Homework29 from "homeworks/Homework29"
 import Lesson30 from "lessons/Lesson30"
 import Homework31 from "homeworks/Homework31"
+import JokeGenerator from "components/JokeGenerator"
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <TodoList />
+      <JokeGenerator />
+      {/* <TodoList /> */}
       {/* <Layout>
         <Routes>
           <Route path="/" element={<Home/>} />
