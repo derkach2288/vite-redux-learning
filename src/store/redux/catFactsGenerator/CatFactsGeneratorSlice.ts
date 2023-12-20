@@ -20,7 +20,14 @@ export const getCatFact = createAsyncThunk("CAT_FACT_GENERATOR", async () => {
 const CatFactsGeneratorSlice = createSlice({
   name: "CAT_FACT_GENERATOR",
   initialState: catFactsGeneratorInitialState,
-  reducers: {},
+  reducers: {
+    deleteFact: (state: CatFactsGeneratorState, {payload}: PayloadAction<string>) => {
+      state.data = [...state.data].filter((factObj) => factObj.id !== payload )
+    },
+    deleteAllFacts: (state: CatFactsGeneratorState) => {
+      state.data = []
+    }
+  },
   extraReducers: (builder) => {
     builder
     .addCase(getCatFact.pending, (state: CatFactsGeneratorState) => {
@@ -34,6 +41,7 @@ const CatFactsGeneratorSlice = createSlice({
     .addCase(getCatFact.rejected, (state: CatFactsGeneratorState, {payload}: PayloadAction<any>) => {
       state.isLoading = false
       state.error = payload
+      alert("Ошибка сети")
     })
   }
 })
