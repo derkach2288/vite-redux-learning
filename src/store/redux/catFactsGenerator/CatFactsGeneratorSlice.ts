@@ -13,7 +13,7 @@ const catFactsGeneratorInitialState: CatFactsGeneratorState = {
   isLoading: false,
 }
 
-export const getCatFact = createAsyncThunk("CAT_FACT_GENERATOR", async () => {
+export const getCatFact = createAsyncThunk("CAT_FACT_GENERATOR/getCatFact", async () => {
   const response = await fetch("https://catfact.ninja/fact")
   const result = await response.json()
 

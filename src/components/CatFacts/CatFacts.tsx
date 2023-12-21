@@ -1,4 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
+import {useEffect} from "react"
+
+import {AppDispatch} from "store/store"
 
 import { catFactsGeneratorSelector } from "store/redux/catFactsGenerator/selectors"
 import {
@@ -22,6 +25,12 @@ function CatFacts() {
   const dispatch = useDispatch()
   const { data, error, isLoading } = useSelector(catFactsGeneratorSelector)
 
+  useEffect(() => {
+    if (!!error) {
+      alert("Ошибка сети")
+    }
+  }, [error]);
+  
   return (
     <CatFactsWrapper>
       <CatFactsCard>
@@ -57,7 +66,7 @@ function CatFacts() {
             />
           </CatFactsContainer>
         )}
-        {error && alert("Ошибка сети")}
+        {/* {error && alert("Ошибка сети")} */}
       </CatFactsCard>
     </CatFactsWrapper>
   )
