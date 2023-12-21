@@ -5,6 +5,8 @@ import feedbackReducer from "./redux/feedback/feedbackSlice"
 import { usersReducers } from "./redux/users/usersSlice"
 import {todoListReducers} from "./redux/todoList/todoListSlice"
 import {jokeGeneratorReducers} from "./redux/jokeGenerator/jokeGeneratorSlice"
+import {catFactsGeneratorReducers} from "./redux/catFactsGenerator/CatFactsGeneratorSlice"
+
 
 export const store = configureStore({
   reducer: {
@@ -12,7 +14,8 @@ export const store = configureStore({
     feedback: feedbackReducer,
     users: usersReducers,
     todoList: todoListReducers,
-    jokeGenerator: jokeGeneratorReducers
+    jokeGenerator: jokeGeneratorReducers,
+    catFactsGenerator: catFactsGeneratorReducers
   },
 })
 
