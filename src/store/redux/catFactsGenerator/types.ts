@@ -6,11 +6,11 @@ export interface CatFactsGeneratorState {
 
 export interface CatFactsDataPayload {
   fact: string
-  length: number
+  // length: number
 }
 
 export interface CatFactsData {
   fact: string
-  length: number
+  // length: number
   id: string
 }

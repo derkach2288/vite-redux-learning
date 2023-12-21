@@ -1,7 +1,11 @@
 import { useDispatch, useSelector } from "react-redux"
 
 import { catFactsGeneratorSelector } from "store/redux/catFactsGenerator/selectors"
-import { getCatFact, catFactsGeneratorActions } from "store/redux/catFactsGenerator/CatFactsGeneratorSlice"
+import {
+  getCatFact,
+  catFactsGeneratorActions,
+} from "store/redux/catFactsGenerator/CatFactsGeneratorSlice"
+import { CatFactsData } from "store/redux/catFactsGenerator/types"
 
 import {
   CatFactsWrapper,
@@ -32,22 +36,28 @@ function CatFacts() {
         <LoadingContainer>
           {isLoading && <Paragraph>LOADING...</Paragraph>}
         </LoadingContainer>
-        {data.length >0 && (
+        {data.length > 0 && (
           <CatFactsContainer>
-            {data.map((catFact) => (
+            {data.map((catFact: CatFactsData) => (
               <FactContainer key={catFact.id}>
                 <Paragraph>{catFact.fact}</Paragraph>
-                <Button name="Delete fact" onClick={() => {
-                  dispatch(catFactsGeneratorActions.deleteFact(catFact.id))
-                }}/>
+                <Button
+                  name="Delete fact"
+                  onClick={() => {
+                    dispatch(catFactsGeneratorActions.deleteFact(catFact.id))
+                  }}
+                />
               </FactContainer>
             ))}
-            <Button name="Delete all facts" onClick={() => {
-              dispatch(catFactsGeneratorActions.deleteAllFacts())
-            }}/>
+            <Button
+              name="Delete all facts"
+              onClick={() => {
+                dispatch(catFactsGeneratorActions.deleteAllFacts())
+              }}
+            />
           </CatFactsContainer>
         )}
-        {error && <Paragraph>Error response</Paragraph>}
+        {error && alert("Ошибка сети")}
       </CatFactsCard>
     </CatFactsWrapper>
   )
