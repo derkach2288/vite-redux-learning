@@ -9,7 +9,7 @@ export interface WeatherData {
   temp: string
   city: string
   weatherLogo: string
-  id: number
+  id: string
 }
 
 export interface WeatherError {

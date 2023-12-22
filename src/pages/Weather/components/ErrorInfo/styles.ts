@@ -4,10 +4,9 @@ export const ErrorInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
   margin-top: 50px;
   width: 600px;
-  height: 129px;
+  height: 220px;
   background: linear-gradient(
     134deg,
     rgba(47, 72, 111, 0.62) 5.78%,
@@ -17,6 +16,13 @@ export const ErrorInfoWrapper = styled.div`
   border-radius: 15px;
   padding: 16px 36px;
   box-sizing: border-box;
+`;
+
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
 `;
 
 

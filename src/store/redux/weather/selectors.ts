@@ -4,4 +4,4 @@ import {RootState} from "store/store"
 
 const globalState = (state: RootState) => state
 
-export const weatherSelector = createSelector(globalState, (state) => state.weatherData)
+export const weatherSelectorState = createSelector(globalState, (state) => state.weatherData)

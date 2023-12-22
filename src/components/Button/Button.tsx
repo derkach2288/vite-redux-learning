@@ -4,7 +4,7 @@ import { ButtonProps } from "./types";
 function Button({
   disabled = false,
   name = "Send",
-  type = "submit",
+  type = "button",
   isRedFont,
   onClick,
 }: ButtonProps) {

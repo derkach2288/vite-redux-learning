@@ -1,3 +1,4 @@
+import {v4} from "uuid"
 import {createSlice, createAsyncThunk, PayloadAction} from "@reduxjs/toolkit"
 
 import {WeatherState, WeatherData, WeatherError} from "./types"
@@ -31,8 +32,12 @@ const weatherSlice = createSlice({
         state.weatherCard = undefined
       }
     },
-    deleteWeatherCard: (state: WeatherState, { payload }: PayloadAction<number>) => {
+    deleteWeatherCard: (state: WeatherState, { payload }: PayloadAction<string>) => {
       state.weatherCardsArray = [...state.weatherCardsArray].filter((weatherData) => weatherData.id !== payload)
+      state.weatherCard = undefined
+    },
+    deleteErrorCard: (state: WeatherState) => {
+      state.error = undefined
     },
     deleteAllWeatherCard: (state: WeatherState) => {
       state.weatherCardsArray = []
@@ -51,7 +56,7 @@ const weatherSlice = createSlice({
         temp: `${Math.round(payload.main.temp - 273.15)}°`,
         city: payload.name,
         weatherLogo: `http://openweathermap.org/img/w/${payload.weather[0].icon}.png`, 
-        id: payload.id
+        id: v4()
       }
       // state.error = undefined
     })

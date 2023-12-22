@@ -1,19 +1,29 @@
-import { ErrorInfoWrapper, ErrorCod, ErrorCity } from "./styles";
+import Button from "components/Button"
+
+import {
+  ErrorInfoWrapper,
+  ErrorCod,
+  ErrorCity,
+  ButtonsContainer,
+} from "./styles"
 
 interface ErrorInfoProps {
-  weatherError?: {
-    errorCod: string;
-    message: string;
-    }
+  cod: string;
+  message: string;
+  onDelete: any
 }
 
-function ErrorInfo({weatherError}:ErrorInfoProps) {
+function ErrorInfo({cod, message, onDelete  }: ErrorInfoProps) {
   return (
     <ErrorInfoWrapper>
-      <ErrorCod>{weatherError?.errorCod}</ErrorCod>
-      <ErrorCity>{weatherError?.message}</ErrorCity>
+        <ErrorCod>{cod}</ErrorCod>
+        <ErrorCity>{message}</ErrorCity>
+      <ButtonsContainer>
+        <Button name="Delete" onClick={onDelete}/>
+      </ButtonsContainer>
+
     </ErrorInfoWrapper>
-  );
+  )
 }
 
-export default ErrorInfo;
+export default ErrorInfo

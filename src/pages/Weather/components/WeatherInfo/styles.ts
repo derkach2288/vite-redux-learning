@@ -2,11 +2,12 @@ import { styled } from "styled-components";
 
 export const WeatherInfoWrapper = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 10px;
   margin-top: 50px;
   width: 600px;
-  height: 129px;
+  height: 220px;
   background: linear-gradient(
     134deg,
     rgba(47, 72, 111, 0.62) 5.78%,
@@ -18,6 +19,20 @@ export const WeatherInfoWrapper = styled.div`
   box-sizing: border-box;
 `;
 
+export const InfoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 80px;
+`;
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 80px;
+`;
+
+
 export const TempContainer = styled.div`
   width: 150px;
   height: 100px;
@@ -27,7 +42,6 @@ export const TempContainer = styled.div`
   align-items: center;
   align-content: flex-start;
   gap: 5px;
-  margin-left: 20px;
 `;
 
 export const WeatherTemp = styled.p`
