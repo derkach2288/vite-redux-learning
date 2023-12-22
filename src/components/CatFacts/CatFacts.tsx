@@ -22,7 +22,7 @@ import {
 import Button from "components/Button"
 
 function CatFacts() {
-  const dispatch = useDispatch()
+  const dispatch: AppDispatch = useDispatch()
   const { data, error, isLoading } = useSelector(catFactsGeneratorSelector)
 
   useEffect(() => {
@@ -39,7 +39,7 @@ function CatFacts() {
           disabled={isLoading}
           name="Get Cat Fact"
           onClick={() => {
-            dispatch(getCatFact() as any)
+            dispatch(getCatFact())
           }}
         />
         <LoadingContainer>

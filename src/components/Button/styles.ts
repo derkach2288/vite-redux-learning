@@ -1,22 +1,17 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 interface ButtonComponetProps {
-  $isRedFont?: boolean | undefined;
+  $isRedFont?: boolean | undefined
 }
 
 export const ButtonComponent = styled.button<ButtonComponetProps>`
-  width: 100%;
-  min-height: 50px;
-  height: fit-content;
-  margin: 0;
-  padding: 4px;
-  outline: none;
-  border: none;
-  border-radius: 8px;
+  padding: 12px 40px;
+  gap: 10px;
   cursor: pointer;
-  /* background-color: ${(props) => (props.disabled ? "grey" : "blue")}; */
-  background-color: ${({ disabled }) => (disabled ? "grey" : "blue")};
-  color: ${({ $isRedFont }) => ($isRedFont ? "red" : "white")};
-  font-size: 14px;
-  font-weight: bold;
-`;
+  border-radius: 50px;
+  border: 1px solid #fff;
+  font-size: 20px;
+  color: #fff; 
+  background-color: transparent;
+  cursor: pointer;
+`

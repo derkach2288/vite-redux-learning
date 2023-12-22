@@ -6,6 +6,7 @@ import { usersReducers } from "./redux/users/usersSlice"
 import {todoListReducers} from "./redux/todoList/todoListSlice"
 import {jokeGeneratorReducers} from "./redux/jokeGenerator/jokeGeneratorSlice"
 import {catFactsGeneratorReducers} from "./redux/catFactsGenerator/CatFactsGeneratorSlice"
+import {weatherReducers} from "./redux/weather/wertherSlice"
 
 
 export const store = configureStore({
@@ -15,7 +16,8 @@ export const store = configureStore({
     users: usersReducers,
     todoList: todoListReducers,
     jokeGenerator: jokeGeneratorReducers,
-    catFactsGenerator: catFactsGeneratorReducers
+    catFactsGenerator: catFactsGeneratorReducers,
+    weatherData: weatherReducers
   },
 })
 

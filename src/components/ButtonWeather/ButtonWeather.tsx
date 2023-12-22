@@ -1,24 +1,20 @@
 import { ButtonComponent } from "./styles";
+
 import { ButtonProps } from "./types";
 
-function Button({
-  disabled = false,
-  name = "Send",
+function ButtonWeather({
+  name = "Search",
   type = "button",
-  isRedFont,
   onClick,
 }: ButtonProps) {
   return (
     <ButtonComponent
-      disabled={disabled}
       type={type}
-      className="button-component"
       onClick={onClick}
-      $isRedFont={isRedFont}
     >
       {name}
     </ButtonComponent>
   );
 }
 
-export default Button;
+export default ButtonWeather;
